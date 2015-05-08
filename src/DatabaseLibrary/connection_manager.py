@@ -12,7 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-import ConfigParser
+from configparser import ConfigParser
 from robot.api import logger
 
 class ConnectionManager(object):
@@ -59,7 +59,7 @@ class ConnectionManager(object):
         | Connect To Database | psycopg2 | my_db_test |
         """
 
-        config = ConfigParser.ConfigParser()
+        config = ConfigParser()
         config.read([dbConfigFile])
 
         dbapiModuleName = dbapiModuleName or config.get('default', 'dbapiModuleName')
